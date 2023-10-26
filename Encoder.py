@@ -1,5 +1,6 @@
-
 game = True
+
+
 # Artem Antonian
 def encode():
     password = ""
@@ -8,10 +9,17 @@ def encode():
     user.append(user_input)
     print("Your password has been encoded and stored!")
     print("")
-    print(user[0])
     for i in user[0]:
-        encoded_num = str(int(i) + 3)
+        if int(i) < 7:
+            encoded_num = str(int(i) + 3)
+        elif int(i) == 7:
+            encoded_num = "0"
+        elif int(i) == 8:
+            encoded_num = "1"
+        else:
+            encoded_num = "2"
         password += encoded_num
+
 def main(game):
     while game:
 
@@ -30,8 +38,6 @@ def main(game):
             pass
         else:
             game = False
-
-
 
 
 if __name__ == '__main__':
