@@ -2,13 +2,9 @@ game = True
 
 
 # Artem Antonian
-def encode():
+def encode(user):
     password = ""
-    user = []
-    user_input = input("Please enter your password: ")
-    user.append(user_input)
-    print("Your password has been encoded and stored!")
-    print("")
+    
     for i in user[0]:
         if int(i) < 7:
             encoded_num = str(int(i) + 3)
@@ -19,6 +15,7 @@ def encode():
         else:
             encoded_num = "2"
         password += encoded_num
+        return password
 
 def main(game):
     while game:
@@ -33,7 +30,13 @@ def main(game):
         option = int(input("PLease enter an option: "))
 
         if option == 1:
-            encode()
+            user = []
+            user_input = input("Please enter your password: ")
+            user.append(user_input)
+            
+            print("Your password has been encoded and stored!")
+            print("")
+            encode(user)
         elif option == 2:
             pass
         else:
