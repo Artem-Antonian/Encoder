@@ -1,6 +1,6 @@
 
 game = True
-
+# Artem Antonian
 def encode():
     password = ""
     user = []
