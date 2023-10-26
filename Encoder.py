@@ -1,17 +1,22 @@
-
 game = True
 
-def encode():
+
+# Artem Antonian
+def encode(user):
     password = ""
-    user = []
-    user_input = input("Please enter your password: ")
-    user.append(user_input)
-    print("Your password has been encoded and stored!")
-    print("")
-    print(user[0])
+    
     for i in user[0]:
-        encoded_num = str(int(i) + 3)
+        if int(i) < 7:
+            encoded_num = str(int(i) + 3)
+        elif int(i) == 7:
+            encoded_num = "0"
+        elif int(i) == 8:
+            encoded_num = "1"
+        else:
+            encoded_num = "2"
         password += encoded_num
+        return password
+
 def main(game):
     while game:
 
@@ -25,13 +30,19 @@ def main(game):
         option = int(input("PLease enter an option: "))
 
         if option == 1:
-            encode()
+            user = []
+            user_input = input("Please enter your password: ")
+            user.append(user_input)
+            
+            print("Your password has been encoded and stored!")
+            print("")
+            encoded_password = encode(user)
         elif option == 2:
-            pass
+            decoded_password = decode(encoded_password)
+            print(f"The encoded password is {encoded_password}, and the original password is {decoded_password}.")
+            print("")
         else:
             game = False
-
-
 
 
 if __name__ == '__main__':
