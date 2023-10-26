@@ -39,6 +39,8 @@ def main(game):
             encoded_password = encode(user)
         elif option == 2:
             decoded_password = decode(encoded_password)
+            print(f"The encoded password is {encoded_password}, and the original password is {decoded_password}.")
+            print("")
         else:
             game = False
 
