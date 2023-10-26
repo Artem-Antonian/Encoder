@@ -36,9 +36,9 @@ def main(game):
             
             print("Your password has been encoded and stored!")
             print("")
-            encode(user)
+            encoded_password = encode(user)
         elif option == 2:
-            pass
+            decoded_password = decode(password)
         else:
             game = False
 
